@@ -75,7 +75,7 @@ function LensScene({
       const mask = `radial-gradient(circle at ${x}px ${y}px, transparent ${LENS_RADIUS - 8}px, black ${LENS_RADIUS + 12}px)`
       if (baseImgRef.current) {
         baseImgRef.current.style.maskImage = mask
-        ;(baseImgRef.current.style as any).webkitMaskImage = mask
+          ; (baseImgRef.current.style as any).webkitMaskImage = mask
       }
 
       if (scanRef.current) {
@@ -286,6 +286,30 @@ function LensScene({
         </div>
         Move cursor to explore
       </div>
+
+      {/* AI Assistant Message */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '25%',
+          right: '3rem',
+          background: 'rgba(0,0,0,0.65)',
+          color: 'white',
+          padding: '14px 18px',
+          borderRadius: '14px',
+          fontSize: '14px',
+          lineHeight: '1.6',
+          backdropFilter: 'blur(10px)',
+          border: '1px solid rgba(79,142,247,0.4)',
+          maxWidth: '240px',
+        }}
+      >
+        ᖰ🧸ྀིᖳ <strong>AI Assistant</strong>
+        <br />
+        Gate A12 is 120 meters ahead.
+      </div>
+
+
     </section>
   )
 }
@@ -303,7 +327,13 @@ function Nav() {
     return () => window.removeEventListener('scroll', handler)
   }, [])
 
-  const links = ['SEE', 'UNDERSTAND', 'SENSE', 'Technology', 'About']
+  const links = [
+    'SEE',
+    'UNDERSTAND',
+    'SENSE',
+    'Technology',
+    'About',
+  ]
 
   const scrollTo = (id: string) => {
     document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: 'smooth' })
@@ -603,7 +633,7 @@ function Hero() {
             borderTop: '1px solid rgba(255,255,255,0.1)',
           }}>
             {[
-              { value: '3', label: 'Vision Modes' },
+              { value: '4', label: 'AI Modes' },
               { value: 'AI', label: 'Powered' },
               { value: '0.1s', label: 'Response Time' },
             ].map((stat) => (
@@ -697,10 +727,30 @@ function SceneTransition({ number, label }: { number: string; label: string }) {
 // ─────────────────────────────────────────────
 function HowItWorks() {
   const steps = [
-    { num: '01', icon: '👁', title: 'Wear Airis', desc: 'Comfortable, lightweight lenses that fit naturally into your daily routine.' },
-    { num: '02', icon: '✦', title: 'Enhance Vision', desc: 'Advanced optics process your environment in real time.' },
-    { num: '03', icon: '⬡', title: 'Understand Your World', desc: 'AI identifies objects, text, and potential hazards around you.' },
-    { num: '04', icon: '◎', title: 'Move Confidently', desc: 'Live, work, and explore with enhanced independence every day.' },
+    {
+      num: '01',
+      icon: '👁',
+      title: 'Wear Airis',
+      desc: 'Insert the smart contact lens.',
+    },
+    {
+      num: '02',
+      icon: 'ᖰ🧸ྀིᖳ',
+      title: 'Connect Earbuds',
+      desc: 'Pair wireless earbuds for private AI guidance.',
+    },
+    {
+      num: '03',
+      icon: '🤖',
+      title: 'AI Understands',
+      desc: 'The lens analyzes your surroundings.',
+    },
+    {
+      num: '04',
+      icon: '🧭',
+      title: 'Voice Navigation',
+      desc: 'Receive spoken directions and alerts.',
+    },
   ]
 
   return (
@@ -812,6 +862,15 @@ function Features() {
       accent: 'rgba(138,120,148,0.12)',
       border: 'rgba(138,120,148,0.3)',
       id: 'sense',
+    },
+    {
+      badge: 'LISTEN',
+      title: 'Private AI Guidance',
+      desc: 'Receive real-time spoken navigation and object recognition through wireless earbuds.',
+      color: '#4F8EF7',
+      accent: 'rgba(79,142,247,0.12)',
+      border: 'rgba(79,142,247,0.3)',
+      id: 'listen',
     },
   ]
 
