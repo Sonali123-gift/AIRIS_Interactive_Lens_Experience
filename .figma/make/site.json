@@ -1,0 +1,10 @@
+{
+  "description": "Explore interactive scenes where a smart lens reveals enhanced visuals like sharp details, night vision, and motion detection to enrich user perception.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
