@@ -343,9 +343,7 @@ function Nav() {
         </a>
 
         {/* Desktop Links */}
-        <div style={{
-          display: 'flex', gap: '2.5rem', alignItems: 'center',
-        }} className="hidden md:flex">
+        <div className="hidden md:flex items-center gap-10">
           {links.map((link) => (
             <button
               key={link}
@@ -370,8 +368,9 @@ function Nav() {
         </div>
 
         {/* CTA */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <div className="flex items-center gap-4">
           <button
+            className="hidden md:block"
             onClick={() => scrollTo('waitlist')}
             style={{
               background: '#FFA34D',
