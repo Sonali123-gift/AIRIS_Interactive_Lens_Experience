@@ -51,7 +51,7 @@ function LensScene({
   const active = useRef(false)
   const rotating = useRef(0)
   const scale = useRef(1)
-  const rafRef = useRef<number>()
+  const rafRef = useRef<number | undefined>(undefined)
 
   useEffect(() => {
     const animate = () => {
@@ -862,15 +862,6 @@ function Features() {
       accent: 'rgba(138,120,148,0.12)',
       border: 'rgba(138,120,148,0.3)',
       id: 'sense',
-    },
-    {
-      badge: 'LISTEN',
-      title: 'Private AI Guidance',
-      desc: 'Receive real-time spoken navigation and object recognition through wireless earbuds.',
-      color: '#4F8EF7',
-      accent: 'rgba(79,142,247,0.12)',
-      border: 'rgba(79,142,247,0.3)',
-      id: 'listen',
     },
   ]
 
